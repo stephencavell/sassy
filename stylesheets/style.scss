@@ -1,0 +1,121 @@
+@import "bourbon/bourbon";
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
+
+html, body {
+    margin: 0;
+    padding: 0;
+    
+    width: 100%;
+    height: 100%;
+    //overflow: hidden;
+    font-family: 'Raleway', sans-serif;
+    
+    background-color: floralwhite;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.page_wrap {
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+
+}
+
+.wrapper {
+    background-image: url('../img/Cavell-6.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-height: 700px;
+    min-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    height: 100%;
+    
+    position: relative;
+    text-align: center;
+    
+    span {
+        text-align: center;
+        color: floralwhite;
+        font-size: 500%;
+        font-weight: 700;
+        position: absolute;
+        top: 70%;
+        @include transform(translate(-50%, -50%));
+        width: 100%;
+    }
+}
+
+header {
+    @include align-items(center);
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(center);
+
+    height: 50px;
+}
+
+#logo {
+    font-size: 150%;
+}
+
+.nav {
+    height: inherit;
+}
+
+.navlinks {
+    @include align-items(center);
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(center);
+    
+    height: inherit;
+    min-width: 800px;
+}
+
+.navlink {
+    margin: 0px;
+    padding: 0px;
+    height: inherit;
+    
+    @include flex-basis(0);
+    @include flex-grow(1);
+    @include flex-shrink(1);
+    @include transition(all .15s ease-in-out);
+
+    //font-family: sans-serif;
+    text-align: center;
+    
+    position: relative;
+    cursor: pointer;
+    color: #282828;
+    
+    a {
+        position: absolute;
+        top: 50%;
+        @include transform(translate(-50%, -50%));
+        font-size: 100%;
+        text-decoration: inherit;
+        color: inherit;
+        cursor: inherit;
+    }
+}
+
+.navlink:hover, .navlink.active {
+    color: black;
+    font-weight: 900;
+}
+
+.content {
+    margin: auto;
+    max-width: 500px;
+}
+
+
+
