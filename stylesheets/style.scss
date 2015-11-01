@@ -32,12 +32,12 @@ ul {
     background-size: cover;
     background-position: center;
     max-height: 700px;
-    min-width: 1000px;
+
     margin: auto;
     overflow: hidden;
     height: 100%;
     
-    position: relative;
+    //position: relative;
     text-align: center;
     
     span {
@@ -46,18 +46,13 @@ ul {
         font-size: 500%;
         font-weight: 700;
         position: absolute;
-        top: 70%;
+        top: 50%;
         @include transform(translate(-50%, -50%));
         width: 100%;
     }
 }
 
 header {
-    @include align-items(center);
-    @include display(flex);
-    @include flex-direction(row);
-    @include justify-content(center);
-
     height: 50px;
 }
 
@@ -67,55 +62,112 @@ header {
 
 .nav {
     height: inherit;
-}
-
-.navlinks {
-    @include align-items(center);
-    @include display(flex);
-    @include flex-direction(row);
-    @include justify-content(center);
+    width: inherit;
     
-    height: inherit;
-    min-width: 800px;
-}
-
-.navlink {
-    margin: 0px;
-    padding: 0px;
-    height: inherit;
-    
-    @include flex-basis(0);
-    @include flex-grow(1);
-    @include flex-shrink(1);
-    @include transition(all .15s ease-in-out);
-
-    //font-family: sans-serif;
-    text-align: center;
-    
-    position: relative;
-    cursor: pointer;
-    color: #282828;
-    
-    a {
-        position: absolute;
-        top: 50%;
-        @include transform(translate(-50%, -50%));
-        font-size: 100%;
-        text-decoration: inherit;
-        color: inherit;
-        cursor: inherit;
+    #nav_toggle {
+        display: none;
     }
 }
 
-.navlink:hover, .navlink.active {
-    color: black;
-    font-weight: 900;
+@media screen and (min-width: 480px){
+    .navlinks {
+        //flex settings
+        @include align-items(center);
+        @include display(flex);
+        @include flex-direction(row);
+        @include justify-content(center);
+        @include flex-wrap(wrap);
+
+        //inherit header height
+        height: inherit;
+    }
+
+    .navlink {
+        margin: 0px;
+        padding: 0px;
+        height: inherit;
+
+        background-color: floralwhite;
+
+        min-width: 100px;
+
+        @include flex-basis(0);
+        @include flex-grow(1);
+        @include flex-shrink(0);
+        @include transition(all .15s ease-in-out);
+
+        //font-family: sans-serif;
+        text-align: center;
+
+        position: relative;
+        cursor: pointer;
+        color: #282828;
+
+        a {
+            position: absolute;
+            top: 50%;
+            @include transform(translate(-50%, -50%));
+            font-size: 100%;
+            text-decoration: inherit;
+            color: inherit;
+            cursor: inherit;
+        }
+    }
+
+    .navlink:hover, .navlink.active {
+        color: black;
+        font-weight: 900;
+        text-decoration: underline;
+    }
+    
 }
+
 
 .content {
     margin: auto;
     max-width: 500px;
 }
 
+//handling phone screens for nav menu
+@media screen and (max-width: 480px) {
+    
+    .nav {
+        
+        //for positioning of child
+        position: relative;
+        
+        #nav_toggle {
+            display: block;
 
+            //positions item vert n horiz in parent
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include transform(translate(-50%, -50%));
+            font-size: 150%;
+            @include transition(all .15s ease-in-out);
+            cursor: pointer;
+        }
+    }
+    
+    .navlinks {
+        display: block;
+        
+        .navlink {
+
+            width: inherit;
+            background-color: floralwhite;
+            
+            a {
+                font-size: 100%;
+                text-decoration: inherit;
+                color: inherit;
+                cursor: inherit;
+                background-color: inherit;
+                width: inherit;
+                text-align: center;
+            }
+        }
+    }
+}
 
