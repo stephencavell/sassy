@@ -37,7 +37,7 @@ ul {
     overflow: hidden;
     height: 100%;
     
-    //position: relative;
+    position: relative;
     text-align: center;
     
     span {
@@ -49,6 +49,7 @@ ul {
         top: 50%;
         @include transform(translate(-50%, -50%));
         width: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
     }
 }
 
@@ -111,6 +112,9 @@ header {
             text-decoration: inherit;
             color: inherit;
             cursor: inherit;
+            line-height: 50px;
+            height: inherit;
+            width: inherit;
         }
     }
 

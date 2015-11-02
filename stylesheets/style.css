@@ -26,6 +26,7 @@ ul {
   margin: auto;
   overflow: hidden;
   height: 100%;
+  position: relative;
   text-align: center; }
   .wrapper span {
     text-align: center;
@@ -39,7 +40,8 @@ ul {
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    width: 100%; }
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4); }
 
 header {
   height: 50px; }
@@ -135,7 +137,10 @@ header {
       font-size: 100%;
       text-decoration: inherit;
       color: inherit;
-      cursor: inherit; }
+      cursor: inherit;
+      line-height: 50px;
+      height: inherit;
+      width: inherit; }
 
   .navlink:hover, .navlink.active {
     color: black;
