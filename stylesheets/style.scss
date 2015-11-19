@@ -39,6 +39,7 @@ ul {
     
     position: relative;
     text-align: center;
+    box-shadow: 10px 10px 5px black;
     
     span {
         text-align: center;
@@ -53,8 +54,13 @@ ul {
     }
 }
 
+div {
+    box-shadow: 0px 10px black;
+}
+
 header {
     height: 50px;
+    box-shadow: 0px 10px black;
 }
 
 #logo {
@@ -121,7 +127,6 @@ header {
     .navlink:hover, .navlink.active {
         color: black;
         font-weight: 900;
-        text-decoration: underline;
     }
     
 }
@@ -130,6 +135,7 @@ header {
 .content {
     margin: auto;
     max-width: 500px;
+    height: 750px;
 }
 
 //handling phone screens for nav menu
